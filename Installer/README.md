@@ -8,7 +8,7 @@ Pulling stable version from docker hub.
 
 Run the container:
 
-    docker run -d -it -p8080:8080 docker.osgeo.org/geoserver:2.26.0
+    docker run -d -it --name geoserver --restart unless-stopped -p8080:8080 docker.osgeo.org/geoserver:2.26.0
 
 Using your own data directory:
 
@@ -21,7 +21,7 @@ Install postgresql as a database:
 
 Production env.
 
-    docker run -d --name postgresql -e ALLOW_EMPTY_PASSWORD=yes bitnami/postgresql:latest
+    docker run -d --name postgresql --restart unless-stopped -e ALLOW_EMPTY_PASSWORD=yes bitnami/postgresql:latest
 
 ----------------------------------------------------------------------------------------------
 
