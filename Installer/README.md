@@ -21,6 +21,6 @@ Install postgresql as a database:
 
 Production env.
 
-    docker run -d --name postgresql --restart unless-stopped -e ALLOW_EMPTY_PASSWORD=yes bitnami/postgresql:latest
+    docker run -d --name postgresql --restart unless-stopped -v postgres_data:/var/lib/postgresql/data -e ALLOW_EMPTY_PASSWORD=yes bitnami/postgresql:latest
 
 ----------------------------------------------------------------------------------------------
