@@ -8,11 +8,11 @@ Pulling stable version from docker hub.
 
 Run the container:
 
-    docker run -d -it --name geoserver --restart unless-stopped -p8080:8080 docker.osgeo.org/geoserver:2.26.0
+    docker run -d -it --name geoserver --env INSTALL_EXTENSIONS=true --env STABLE_EXTENSIONS="ysld,h2" --restart unless-stopped -p8080:8080 docker.osgeo.org/geoserver:2.26.0
 
 Using your own data directory:
 
-    docker run -it -p8080:8080 -v geoserver_data:/opt/geoserver_data docker.osgeo.org/geoserver:2.26.0
+    docker run -d -it --env INSTALL_EXTENSIONS=true --env STABLE_EXTENSIONS="ysld,h2" --restart unless-stopped -p8080:8080 -v geoserver_data:/opt/geoserver_data docker.osgeo.org/geoserver:2.26.0
 
 
 ---------------------------------------------------------------------------------------------
